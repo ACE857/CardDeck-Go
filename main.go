@@ -3,11 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	//var card = "Ace of spades"
-	card := "Ace of spades" // := is only used when defining new var, when reassigning only use =
-	// variables can be initilized outside the function be can only be assigned insde
-	card = newCard()
-	fmt.Println(card)
+	// Go has 2 DS for handling list of records - array(fixed length), slice(dynamic length)
+	cards := []string{"Ace of diamonds", newCard()}
+	cards = append(cards, "Six of spades") // appends does not moodify existing slice it returns a new one
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
 
 func newCard() string {
