@@ -1,12 +1,11 @@
 package main
 
-func main() {
-	// Go has 2 DS for handling list of records - array(fixed length), slice(dynamic length)
-	cards := deck{"Ace of diamonds", newCard()}
-	cards = append(cards, "Six of spades") // appends does not moodify existing slice it returns a new one
-	cards.print()
-}
+import "fmt"
 
-func newCard() string {
-	return "Five of diamond"
+func main() {
+	cards := newDeck()
+	cards.print()
+	fmt.Println("Dealing hand of size 5")
+	hand, cards := deal(cards, 5)
+	fmt.Println(hand, cards)
 }
