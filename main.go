@@ -11,4 +11,7 @@ func main() {
 	fmt.Println(hand, cards)
 	cards = newDeckFromFile("cards.txt")
 	cards.print()
+	fmt.Println("Shuffing deck")
+	cards.shuffle()
+	cards.print()
 }
